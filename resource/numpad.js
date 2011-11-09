@@ -4,7 +4,7 @@ if(!window.sessionStorage){
 
 sessionStorage.inputnum1 = 'empty';
 sessionStorage.inputnum2 = 'empty';
-$("#phone_number").live('click',function(){
+$("#phone_number").live('click tap',function(){
 	sessionStorage.inputbox = "phone_number";
 	$.mobile.changePage( "numpad", {
 		type: "get", 
@@ -12,7 +12,7 @@ $("#phone_number").live('click',function(){
 	});
 });
 
-$("#phone_number_again").live('click',function(){
+$("#phone_number_again").live('click tap',function(){
 	sessionStorage.inputbox = "phone_number_again";
 	$.mobile.changePage( "numpad", {
 		type: "get", 
@@ -20,7 +20,7 @@ $("#phone_number_again").live('click',function(){
 	});
 });
 
-$("#pad_ok").live('click',function(){
+$("#pad_ok").live('click tap',function(){
 	$('#numberpad').dialog('close');
 	if(sessionStorage.inputbox=='phone_number'){
 		sessionStorage.inputnum1 = $("#numberbox").val();
@@ -39,14 +39,14 @@ $("#recharge").live('pagebeforehide', function() {
 	$("#phone_number_again").val("");
 });
 
-$(".numbers").live('click',function(){
+$(".numbers").live('click tap',function(){
 	$("#numberbox").val($("#numberbox").val()+$(this).children('span').children('span').html());
 });
 
-$("#del").live('click',function(){
+$("#del").live('click tap',function(){
 	$("#numberbox").val($("#numberbox").val().slice(0,-1));
 });
 
-$("#reset").live('click',function(){
+$("#reset").live('click tap',function(){
 	$("#numberbox").val('');
 });
